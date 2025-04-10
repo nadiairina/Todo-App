@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light; /* force light scheme */
   --white: #f0faff;               /* azul bebê quase branco */
   --light-grey: #bae6fd;          /* azul pastel clarinho */
   --dark-grey: #0c4a6e;           /* azul profundo mas suave */
@@ -18,15 +18,9 @@
 html, body {
   height: 100%;
   margin: 0;
-  background-color: var(--dark-grey);
-}
-
-body {
-  background-color: var(--dark-grey);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--dark-grey); /* fundo azul profundo suave */
+  color: var(--dark-grey); /* cor padrão do texto */
+  font-family: sans-serif;
 }
 
 main {
@@ -48,7 +42,6 @@ h1 {
   border: 5px solid var(--yellow);
   border-radius: 8px;
   padding: 15px;
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -61,8 +54,7 @@ h1 {
   color: var(--dark-grey);
   background-color: var(--golden-yellow);
   background-image: linear-gradient(#dbeafe, #93c5fd);
-  border-color: var(--golden-yellow);
-  border-width: 3px;
+  border: 3px solid var(--golden-yellow);
 }
 
 .btn:hover {
@@ -73,7 +65,6 @@ h1 {
   width: 80%;
   font-size: 1.2rem;
   align-self: center;
-  justify-self: center;
 }
 
 .close-task-form-btn {
@@ -88,7 +79,6 @@ h1 {
 }
 
 .task-form {
-  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -98,6 +88,7 @@ h1 {
   padding: 15px;
   width: 300px;
   height: 350px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: auto;
@@ -119,18 +110,11 @@ h1 {
   justify-content: center;
 }
 
-.task-form-label,
-#title-input,
-#date-input,
-#description-input {
-  display: block;
-}
-
 .task-form-label {
   margin-bottom: 5px;
   font-size: 1.3rem;
   font-weight: bold;
-  color: #0284c7; /* azul mais forte para destaque */
+  color: #0284c7;
 }
 
 #title-input,
@@ -138,8 +122,8 @@ h1 {
 #description-input {
   width: 100%;
   margin-bottom: 10px;
-  padding: 2px;
-  background-color: #e0f2fe; /* azul bebê claro */
+  padding: 5px;
+  background-color: #e0f2fe;
   border: 1px solid #bae6fd;
 }
 
@@ -175,6 +159,7 @@ h1 {
   display: none;
 }
 
+/* Responsive */
 @media (min-width: 576px) {
   .todo-app,
   .task-form {
@@ -196,26 +181,6 @@ h1 {
   #description-input {
     padding: 5px;
     margin-bottom: 20px;
-  }
-}
-
-/* Override system dark mode preferences */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: light;
-  }
-
-  body, main, .todo-app, .task-form {
-    background-color: var(--white);
-    color: var(--dark-grey);
-  }
-
-  .task-form-label {
-    color: #0284c7;
-  }
-
-  .discard-message-text {
-    color: #2563eb;
   }
 }
 
