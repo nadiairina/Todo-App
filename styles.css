@@ -14,6 +14,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--dark-blue); /* ou substitui por #003B5C diretamente */
+}
+
  body {
   background-color: var(--dark-grey);
   display: flex;
@@ -21,6 +27,7 @@
   align-items: center;
   justify-content: center;
 }
+
 
 
 main {
@@ -192,4 +199,13 @@ h1 {
     margin-bottom: 20px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body, main, .todo-app {
+    background-color: var(--white); /* or any light color you prefer */
+    color: var(--dark-grey);
+  }
+  /* You can reset other elements too if needed */
+}
+
 
