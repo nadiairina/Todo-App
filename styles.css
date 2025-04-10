@@ -6,7 +6,6 @@
   --yellow: #7dd3fc;              /* azul bebê vibrante */
   --golden-yellow: #38bdf8;       /* azul médio (ainda suave) */
 }
-
 *,
 *::before,
 *::after {
@@ -18,16 +17,18 @@
 html, body {
   height: 100%;
   margin: 0;
-  background-color: var(--dark-grey);
+  background-color: var(--dark-blue); /* ou substitui por #003B5C diretamente */
 }
 
-body {
+ body {
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+
 
 main {
   display: flex;
@@ -60,7 +61,7 @@ h1 {
   margin: 10px;
   color: var(--dark-grey);
   background-color: var(--golden-yellow);
-  background-image: linear-gradient(#dbeafe, #93c5fd);
+  background-image: linear-gradient(#dbeafe, #93c5fd); /* azul claro degradê */
   border-color: var(--golden-yellow);
   border-width: 3px;
 }
@@ -199,23 +200,12 @@ h1 {
   }
 }
 
-/* Override system dark mode preferences */
 @media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: light;
-  }
-
-  body, main, .todo-app, .task-form {
-    background-color: var(--white);
+  body, main, .todo-app {
+    background-color: var(--white); /* or any light color you prefer */
     color: var(--dark-grey);
   }
-
-  .task-form-label {
-    color: #0284c7;
-  }
-
-  .discard-message-text {
-    color: #2563eb;
-  }
+  /* You can reset other elements too if needed */
 }
+
 
