@@ -29,6 +29,7 @@ const addOrUpdateTask = () => {
     date: dateInput.value,
     description: removeSpecialChars(descriptionInput.value),
   };
+
   if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
   } else {
